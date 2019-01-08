@@ -13,9 +13,7 @@ export default class App extends React.Component {
     return (
       <div>
         <h1>Where to?</h1>
-        <Geosuggest
-          onSuggestSelect={this.onSuggestSelect}
-        />
+        <Geosuggest onSuggestSelect={this.onSuggestSelect} />
       </div>
     );
   }
