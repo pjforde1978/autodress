@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Geosuggest from "react-geosuggest";
 import "./index.css";
 
-class App extends React.Component {
+export default class App extends React.Component {
   /**
    * Render the example app
    */
