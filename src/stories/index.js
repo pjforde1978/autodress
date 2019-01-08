@@ -1,5 +1,5 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import App from "../index";
+import Autosuggest from "../Autosuggest/Autosuggest";
 
-storiesOf("Autocomplete", module).add("boom", () => <App />);
+storiesOf("Autosuggest", module).add("with postal code", () => <Autosuggest />);
