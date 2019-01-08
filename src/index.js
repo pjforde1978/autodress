@@ -1,12 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import Geosuggest from "react-geosuggest";
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class App extends React.Component {
+  /**
+   * Render the example app
+   */
+  render() {
+    const google = window.google;
+    return (
+      <div>
+        <h1>Where to?</h1>
+        <Geosuggest
+          onSuggestSelect={this.onSuggestSelect}
+          location={new google.maps.LatLng(43.5888128, -79.5492352)}
+          radius="20"
+        />
+      </div>
+    );
+  }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  /**
+   * When a suggest got selected
+   * @param  {Object} suggest The suggest
+   */
+  onSuggestSelect(suggest) {
+    console.log(suggest);
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
